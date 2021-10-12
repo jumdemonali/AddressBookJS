@@ -111,9 +111,23 @@ console.log("\nIndex of Searched name : " + index);
 contactArray[index].zip = "111 000";
 console.log("\nContacts after being updated");
 contactArray.forEach((contact) => console.log(contact.toString()));
-
+try {
 console.log("Searching specific record by name and deleting that record");
 let index1 = contactArray.findIndex(contact => contact.firstName == "Monali");
 contactArray.splice(index1, 2);
 console.log("\nContact deleted");
 contactArray.forEach((contact) => console.log(contact.toString()));
+
+console.log("\nChecking total number of contacts in AddressBook");
+var totalContacts = 0;
+
+function FindTotalContacts(contactArray) {
+    if (contactArray != null)
+        totalContacts++;
+    return totalContacts;
+}
+contactArray.reduce(FindTotalContacts, 1);
+console.log("Total number of contacts are  : " + totalContacts);
+}catch (e) {
+    console.log(e);
+}
