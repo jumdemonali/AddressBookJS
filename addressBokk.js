@@ -111,3 +111,9 @@ console.log("\nIndex of Searched name : " + index);
 contactArray[index].zip = "111 000";
 console.log("\nContacts after being updated");
 contactArray.forEach((contact) => console.log(contact.toString()));
+
+console.log("Searching specific record by name and deleting that record");
+let index1 = contactArray.findIndex(contact => contact.firstName == "Monali");
+contactArray.splice(index1, 2);
+console.log("\nContact deleted");
+contactArray.forEach((contact) => console.log(contact.toString()));
