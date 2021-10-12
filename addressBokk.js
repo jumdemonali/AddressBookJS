@@ -186,7 +186,35 @@ contactArray.forEach((contact) => CheckForDuplicates(contact));
             contactArray.forEach((contact) => console.log(contact.toString()));
         }
         console.log("Sorting by firstName");
-        SortByName();}
+        SortByName();
+        function SortByCity() {
+            for (let contactDetails in contactArray) {
+                contactArray.sort(contactDetails.city);
+            }
+            contactArray.forEach((contact) => console.log(contact.toString()));
+        }
+    
+        function SortByState() {
+            for (let contactDetails in contactArray) {
+                contactArray.sort(contactDetails.state);
+            }
+            contactArray.forEach((contact) => console.log(contact.toString()));
+        }
+    
+        function SortByZip() {
+            for (let contactDetails in contactArray) {
+                contactArray.sort(contactDetails.zip);
+            }
+            contactArray.forEach((contact) => console.log(contact.toString()));
+        }
+    
+        console.log("\nSort By City")
+        SortByCity();
+        console.log("\nSort By State")
+        SortByState();
+        console.log("\nSort By Zip")
+        SortByZip();
+    }    
 catch (e) {
     console.log(e);
 }
