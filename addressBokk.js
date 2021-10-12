@@ -136,7 +136,11 @@ function CheckForDuplicates(contact) {
         countForDuplicate++;
     return countForDuplicate;
 }
-console.log("\nDuplicates records are "+countForDuplicate);
+contactArray.forEach((contact) => CheckForDuplicates(contact));
+    if (countForDuplicate == 1)
+        console.log("No duplicate entry found of this name provided");
+    else
+        console.log("Duplicate entry found of this name provided");
 }catch (e) {
     console.log(e);
 }
