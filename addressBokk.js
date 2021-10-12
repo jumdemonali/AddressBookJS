@@ -172,14 +172,21 @@ contactArray.forEach((contact) => CheckForDuplicates(contact));
         let addressCityMap = contactArray.map(CityMap);
         console.log(addressCityMap);
     
-        //by state
         console.log("\nview person by state");
     
         function StateMap(contactDetails) {
             return contactDetails.state + " -> " + contactDetails.firstName + "  " + contactDetails.lastName;
         }
         let addressStateMap = contactArray.map(StateMap);
-        console.log(addressStateMap);}
+        console.log(addressStateMap);
+        function SortByName() {
+            for (let contactDetails in contactArray) {
+                contactArray.sort(contactDetails.firstName);
+            }
+            contactArray.forEach((contact) => console.log(contact.toString()));
+        }
+        console.log("Sorting by firstName");
+        SortByName();}
 catch (e) {
     console.log(e);
 }
