@@ -141,6 +141,29 @@ contactArray.forEach((contact) => CheckForDuplicates(contact));
         console.log("No duplicate entry found of this name provided");
     else
         console.log("Duplicate entry found of this name provided");
-}catch (e) {
+        console.log("\Contact by Person's city name");
+        var numberOfCity = 0;
+        var numberOfState = 0;
+    
+        function ContactByCity(contactDetails) {
+            if (contactDetails.city == "Nagpur") {
+                console.log(contactDetails.toString());
+                numberOfCity++;
+            }
+        }
+        contactArray.filter(ContactByCity);
+        console.log("\ncontacts by city " + numberOfCity);
+    
+        console.log("\nContact by person's state name");
+    
+        function ContactByState(contactDetails) {
+            if (contactDetails.state == "Maharastra") {
+                console.log(contactDetails.toString());
+                numberOfState++;
+            }
+        }
+        contactArray.filter(ContactByState);
+        console.log("\ncontacts by state is : " + numberOfState);}
+catch (e) {
     console.log(e);
 }
