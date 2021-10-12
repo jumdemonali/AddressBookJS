@@ -104,3 +104,10 @@ contactArray.push(new AddressBook("Rahul", "Kalbande", "saikheda", "Nagpur", "Ma
     "91 7777777777", "rahul@gmail.com"));
 
 contactArray.forEach((contact) => console.log(contact.toString()));
+
+console.log("\nSearching a specific record by name and updating that record");
+let index = contactArray.findIndex(contact => contact.firstName == "Monali");
+console.log("\nIndex of Searched name : " + index);
+contactArray[index].zip = "111 000";
+console.log("\nContacts after being updated");
+contactArray.forEach((contact) => console.log(contact.toString()));
