@@ -128,6 +128,15 @@ function FindTotalContacts(contactArray) {
 }
 contactArray.reduce(FindTotalContacts, 1);
 console.log("Total number of contacts are  : " + totalContacts);
+console.log("\nCheck duplicates records in the AddressBook");
+let countForDuplicate = 0;
+
+function CheckForDuplicates(contact) {
+    if (contact.firstName == "Rahul")
+        countForDuplicate++;
+    return countForDuplicate;
+}
+console.log("\nDuplicates records are "+countForDuplicate);
 }catch (e) {
     console.log(e);
 }
